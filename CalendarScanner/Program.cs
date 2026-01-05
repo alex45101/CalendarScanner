@@ -228,9 +228,9 @@ namespace CalendarScanner
             var calendar = new GoogleCalendar(setupInfo.CalendarKey, setupInfo.ConfirmationEmail, setupInfo.ApplicationName);
 
             foreach (string day in days)
-            {
+            {                
                 //Typically OFF is the 2nd element better to check for this cause schedule could change
-                if (groups[day][1].text.Contains("OFF"))
+                if (groups[day][1].text.Contains("OFF") || groups[day][1].text.Contains("Closed") || groups[day][1].text.Contains("GMR closed"))
                 {
                     continue;
                 }
